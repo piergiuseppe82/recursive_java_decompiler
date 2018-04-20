@@ -1,5 +1,5 @@
 # Recursive Java Decompiler - Bash Script
-##Bash Script for decompile recursively java classes in folder and sub-folders
+#### Bash Script for decompile recursively java classes in folder and sub-folders
 
 ### CONFIGURE
 Change the path of CFR Decompiler in the script 
