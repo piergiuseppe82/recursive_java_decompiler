@@ -11,11 +11,11 @@ function javaDecompileClass {
 }
 
 
-function javaDecompileOnFoleder {
+function recursiveJavaDecompile {
 	for entry in $1/*
 	do
   		if [[ -d $entry ]]; then
-		    javaDecompileOnFoleder $entry
+		    recursiveJavaDecompile $entry
 		elif [[ -f $entry ]]; then
 		    javaDecompileClass $entry
 		else
@@ -25,4 +25,4 @@ function javaDecompileOnFoleder {
 	done
 }
 
-javaDecompileOnFoleder $1;
+recursiveJavaDecompile $1;
