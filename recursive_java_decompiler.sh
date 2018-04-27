@@ -5,6 +5,7 @@ function javaDecompileClass {
     		if [[ $entry == $pattern ]]; then
     			echo "Decompile $entry"
     			java -jar /home/piergiuseppe/devel/java/decompilers/cfr/cfr_0_125.jar $entry > $entry.java
+    			rm  $entry
     			echo "End Decompile $entry"
     		fi
 		done
@@ -26,3 +27,6 @@ function recursiveJavaDecompile {
 }
 
 recursiveJavaDecompile $1;
+
+
+find $1 -name "*.class.java" -exec rename -v 's/\.class.java$/\.java/i' {} \;
